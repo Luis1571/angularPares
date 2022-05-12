@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   _login!: FormGroup;
   _condition!: boolean;
   _registrado!: boolean;
+  _userMap = new Map<string, string>();
   constructor(
     private readonly loginService: LoginService,
     private readonly userService: UsuarioService,
@@ -34,17 +35,18 @@ export class LoginComponent implements OnInit {
       pass: ["", Validators.required],
     });
   }
-
+  loginNoValidation() {
+    this._router.navigate(["/home"]);
+  }
   loginValidation() {
-    console.log(this._login.value.user);
+    //llamada al service con el nick
     this.loginService
       .findById(`${this.urlEndPoint}${this._login.value.user}`)
       .subscribe((data: any) => {
-        console.log(data);
         if (data !== null) {
           if (data.password === this._login.value.pass) {
-            sessionStorage.setItem("usuario", JSON.stringify(data.nombre));
-            sessionStorage.setItem("a1", JSON.stringify(data.apellido1));
+            //guarda en sesion el nick - Con el se podra acceder a todos los datos del usurio a traves del service
+            sessionStorage.setItem("nick", JSON.stringify(data.user));
             this._router.navigate(["/home"]);
           } else {
             alert("contraseña incorrecta");
