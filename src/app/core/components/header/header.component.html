@@ -2,13 +2,15 @@
   <div class="header_encabezado">
     <img src="../../../../assets/img/logo-recorte.PNG" />
 
-    <mat-icon *ngIf="_logeado" class="header_icono">account_circle</mat-icon>
+    <mat-icon *ngIf="_logeado===true" class="header_icono"
+      >account_circle</mat-icon
+    >
     <div
       *ngIf="!_logeado"
       [matMenuTriggerFor]="menu"
       class="header_user_logeado"
     >
-      <p class="header_user_logeado_letra">L</p>
+      <p class="header_user_logeado_letra">{{_initial}}</p>
       <mat-menu #menu="matMenu">
         <p>{{_nickParse}}</p>
         <button mat-raised-button (click)="openDialog()">

@@ -14,11 +14,19 @@
           <mat-label>Contraseña</mat-label>
           <input matInput formControlName="pass" type="password" />
         </mat-form-field>
-        <button mat-raised-button (click)="loginValidation()">
+        <button
+          class="login_Button_Entry"
+          mat-raised-button
+          (click)="loginValidation()"
+        >
           Entrar
         </button>
-        <button mat-raised-button (click)="loginNoValidation()">
-          No usuario
+        <button
+          class="login_Button_NoUser"
+          mat-raised-button
+          (click)="loginNoValidation()"
+        >
+          Acceso sin registro
         </button>
       </form>
     </div>
