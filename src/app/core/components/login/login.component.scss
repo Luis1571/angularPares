@@ -3,29 +3,6 @@
   display: flex;
   justify-content:center;
 padding-top: 200px;
-  //
-  /*    padding-top: 0.5%;
-    padding-bottom: 25%;
-  
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 100vw;
-        background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover; 
-
-         min-height: 100%;
-        min-width: 800px;
- 
-        /* Escalamiento proporcional 
-        width: 100%;
-        height: auto;
- 
-        /* Posicionamiento 
-        position: fixed;
-        top: 0;
-        left: 0; */
   top: 100%;
 }
 .row{
@@ -50,19 +27,28 @@ margin-top: 100px;
 .top{
   height: 100px;
 }
-button{
+.login_Button_Entry{
   //background-color: #ff8300;
   font-size: larger;
   color: #ff8300;
-  border-color:#ff8300;
+  border: 1px solid #ff8300; 
+  width: 100%;
+  margin-bottom: 15px;
+}
+.login_Button_NoUser{
+   font-size: larger;
+   //background-color:dimgray;
+  color: dimgray;
+  //background-color: black; 
+border: 1px solid dimgray; 
+  width: 100%;
 }
 mat-label{
  color: black; 
 }
- input :visited {
-  background-color: green;
-  
-}
-mat-form-field-underline{
+ mat-form-field-underline{
   border-bottom: #ff8300;
+}
+.mat-form-field {
+   background-color: white;
 }

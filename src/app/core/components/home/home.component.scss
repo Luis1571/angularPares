@@ -1,0 +1,22 @@
+.home_general{ 
+    display: flex; 
+    justify-content :space-around;  
+height: 81.4%;
+   background-color: black;
+    align-items: center;
+}
+.card{
+    width: 300px;
+    height: 400px;
+    background-color: white;
+     border-radius: 25px;
+     //opacity: 0.1;
+}
+.login_Button_Entry{
+  //background-color: #ff8300;
+  font-size: larger;
+  color: #ff8300;
+  border: 1px solid #ff8300; 
+  width: 100%;
+  margin-bottom: 15px;
+}
