@@ -14,24 +14,22 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.getNickSesion();
-    this.initialNick();
   }
 
-  openDialog() {}
+  openDialog() { }
+  
+  
 
   getNickSesion(): boolean {
     this._nick = sessionStorage.getItem("nick");
-    this._nickParse = JSON.parse(this._nick);
+    let nick = (this._nickParse = JSON.parse(this._nick));
     if (this._nick) {
+      this._initial = nick.charAt(0);
       return (this._logeado = false);
     } else {
-      return (this._logeado = true);
+      this._logeado = true;
+      console.log(this._logeado);
+      return this._logeado;
     }
-  }
-  initialNick() {
-    this._nick = sessionStorage.getItem("nick");
-    let nick = (this._nickParse = JSON.parse(this._nick));
-    this._initial = nick.charAt(0);
-    console.log(this._initial);
   }
 }

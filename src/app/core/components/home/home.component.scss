@@ -10,13 +10,21 @@ height: 81.4%;
     height: 400px;
     background-color: white;
      border-radius: 25px;
+     border:1px solid #ff8300 ;
      //opacity: 0.1;
 }
-.login_Button_Entry{
+.home_Button_Entry{
   //background-color: #ff8300;
   font-size: larger;
-  color: #ff8300;
+  color: white;
   border: 1px solid #ff8300; 
-  width: 100%;
-  margin-bottom: 15px;
+  background-color: #ff8300;
+  //width: 100%;
+  //margin-bottom: 15px;
+  //align-items: flex-end;
+  position: relative;
+    top: 80%;
+        width: 60%;
+    align-self: center;
+  
 }
