@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Confirmación</h1>
+<div mat-dialog-content>
+  <p>{{mensaje}}</p>
+  <form class="form" [formGroup]="_formNewUser">
+    <input type="text" formControlName="newUser" />
+    <br />
+    <input type="text" formControlName="newPass" />
+    <br />
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cerrarDialogo()">Cancelar</button>
+  <button mat-button (click)="confirmado()" cdkFocusInitial>Guardar</button>
+</div>

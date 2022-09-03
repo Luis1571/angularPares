@@ -2,6 +2,7 @@ import { LEADING_TRIVIA_CHARS } from "@angular/compiler/src/render3/view/templat
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { Usuario } from "../usuario/models/usuario";
 
 import { UsuarioService } from "../usuario/service/usuario.service";
 import { LoginService } from "./service/login-service.service";
@@ -26,6 +27,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this._formInitial();
+
+    /*  this.userService.getUsuarios().subscribe((data) => {
+      console.log(data);
+    }); */
   }
 
   _formInitial() {
@@ -42,7 +47,8 @@ export class LoginComponent implements OnInit {
     //llamada al service con el nick
     this.loginService
       .findById(`${this.urlEndPoint}${this._login.value.user}`)
-      .subscribe((data: any) => {
+      .subscribe((data: Usuario) => {
+        console.log(data);
         if (data !== null) {
           if (data.password === this._login.value.pass) {
             //guarda en sesion el nick - Con el se podra acceder a todos los datos del usurio a traves del service

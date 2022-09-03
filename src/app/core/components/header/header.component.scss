@@ -1,22 +1,17 @@
 .header_contenedor{
-   // height: 100%;
-   // background-color: black;
-    //background-image: url(../../../../assets/img/loginPares.jpg);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
 }
-.header_encabezado{
-    display: flex;
-   background-color: white;
-   justify-content: space-between;
-   align-items: center;
-   //flex-direction: ;
-   //flex-direction: column;
-}
+
 img{
-    width: 13%;
+    width: 8%;
 }
 .header_icono{
+    justify-content: end;
        margin-right: 100px;
     font-size: xx-large;
+    color: #ff8300;;
 }
 .header_user_logeado{
     width: 40px;
@@ -24,7 +19,7 @@ img{
      -moz-border-radius: 50%;
      -webkit-border-radius: 50%;
      border-radius: 50%;
-     background: black;
+     background-color: dimgrey;
      display:flex;
      margin-right: 100px;
      justify-content: center;
