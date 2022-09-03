@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { MatDialog } from "@angular/material/dialog";
+import { DialogRegistroComponent } from "../dialogs/dialog-registro/dialog-registro.component";
 
 @Component({
   selector: "app-header",
@@ -10,15 +12,30 @@ export class HeaderComponent implements OnInit {
   _nick!: any;
   _nickParse!: string;
   _initial!: string;
-  constructor() {}
+
+  animal!: string;
+  name!: string;
+  flagDialogRegistro: boolean = false;
+  constructor(public dialogo: MatDialog) {}
 
   ngOnInit() {
     this.getNickSesion();
   }
 
-  openDialog() { }
-  
-  
+  abrirDialogo() {
+    this.dialogo
+      .open(DialogRegistroComponent, {
+        data: `Introduzca los datos del nuevo usuario`,
+      })
+      .afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (confirmado) {
+          alert("¡A mí también!");
+        } else {
+          alert("Deberías probarlo, a mí me gusta :)");
+        }
+      });
+  }
 
   getNickSesion(): boolean {
     this._nick = sessionStorage.getItem("nick");

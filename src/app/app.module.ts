@@ -29,8 +29,9 @@ import { MatCardModule } from "@angular/material/card";
 import { CardModule } from "primeng/card";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatDialogModule } from "@angular/material/dialog";
+import { DialogRegistroComponent } from './core/components/dialogs/dialog-registro/dialog-registro.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent],
+  declarations: [AppComponent, LoginComponent, HomeComponent, HeaderComponent, DialogRegistroComponent],
   imports: [
     HttpClientModule,
     BrowserModule,
